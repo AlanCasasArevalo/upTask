@@ -1,14 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
+const projectsController = require('../controllers/projectsController');
 module.exports = function () {
-    router.get('/', (req, res) => {
-        res.json('Index');
-    });
+    router.get('/', projectsController.projectsHome);
 
-    router.get('/us', (req, res) => {
-       res.json('us');
-    });
+    router.get('/us',projectsController.projectsUs );
     return router;
 };
 

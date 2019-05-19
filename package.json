@@ -6,13 +6,15 @@
     "start": "nodemon ./index.js"
   },
   "dependencies": {
+    "body-parser": "latest",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+    "mysql2": "^1.6.5",
     "pug": "^2.0.0-beta11",
-    "body-parser": "latest"
+    "sequelize": "^5.8.6"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"

@@ -10,5 +10,7 @@ exports.projectsNewProjects = (req, res) => {
 };
 
 exports.newProject = (req, res) => {
+    console.log(req.body);
+
     res.send('Enviaste el formulario satisfactoriamente');
 };

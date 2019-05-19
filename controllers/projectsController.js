@@ -8,3 +8,7 @@ exports.projectsNewProjects = (req, res) => {
         pageName: "New project"
     });
 };
+
+exports.newProject = (req, res) => {
+    res.send('Enviaste el formulario satisfactoriamente');
+};

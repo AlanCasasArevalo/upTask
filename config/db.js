@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('upTask', 'root', 'YOUR_MYSQL_KEY', {
+const sequelize = new Sequelize('upTaskNode', 'root', 'Pegasus1313', {
     host: 'localhost',
     dialect: 'mysql',
     port: '3306',
@@ -9,3 +9,5 @@ const sequelize = new Sequelize('upTask', 'root', 'YOUR_MYSQL_KEY', {
         timestamp: false
     }
 });
+
+module.exports = sequelize;

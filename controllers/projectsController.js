@@ -1,3 +1,5 @@
+const Projects = require('../models/Projects');
+
 exports.projectsHome = (req, res) => {
     res.render('Index',{
         pageName: "Projects"
@@ -31,6 +33,15 @@ exports.newProject = (req, res) => {
     } else {
         // No hay errores
         // insertar en la base de datos
+        Projects.create({
+            name
+        })
+        .then(() => {
+            console.log('Insertado parametro correctamente');
+        })
+        .catch(error => {
+            console.log("Error al insertar", error);
+        })
     }
 
 };

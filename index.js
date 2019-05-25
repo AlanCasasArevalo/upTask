@@ -3,6 +3,15 @@ const routes = require('./routes');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+require('./models/Projects')
+//Conexion base de datos
+const db = require('./config/db');
+db.sync()
+    .then(() => {
+        console.log("Conectado a la base de datos.");
+    })
+    .catch(error => console.log(error))
+
 const app = express();
 
 app.use(express.static('public'));

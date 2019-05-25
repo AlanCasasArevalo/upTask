@@ -1,8 +1,10 @@
 const Projects = require('../models/Projects');
 
-exports.projectsHome = (req, res) => {
-    res.render('Index', {
-        pageName: "Projects"
+exports.projectsHome = async (req, res) => {
+    const projects = await Projects.findAll();
+    res.render('index', {
+        pageName: "Projects",
+        projects
     });
 };
 exports.projectsNewProjects = (req, res) => {

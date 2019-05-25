@@ -20,11 +20,10 @@ html(lang="es")
                 .panel.lista-proyectos
                     h2 PROYECTOS
                     ul#proyectos.proyectos
-                        li
-                            a(href="#") Diseño de tienda virtual
-                        li
-                            a(href="#") Diseño de Nuevo blog
-                        li
-                            a(href="#") Diseño de Aplicacion de tiendas
+                        if (projects && typeof projects !== 'undefined')
+                            if (projects.length > 0)
+                                each project in projects
+                                    li
+                                        a(href="#")= project.name
 
             block container

@@ -1,20 +1,21 @@
 const Projects = require('../models/Projects');
+const slug = require("slug");
 
 exports.projectsHome = (req, res) => {
-    res.render('Index',{
+    res.render('Index', {
         pageName: "Projects"
     });
 };
 exports.projectsNewProjects = (req, res) => {
-    res.render('newProjects',{
+    res.render('newProjects', {
         pageName: "New project"
     });
 };
 
-exports.newProject = (req, res) => {
+exports.newProject = async (req, res) => {
     // console.log(req.body);
     // console.log(name);
-    const { name } = req.body;
+    const name = req.body.name;
 
     let errors = [];
 
@@ -33,15 +34,12 @@ exports.newProject = (req, res) => {
     } else {
         // No hay errores
         // insertar en la base de datos
-        Projects.create({
-            name
-        })
-        .then(() => {
-            console.log('Insertado parametro correctamente');
-        })
-        .catch(error => {
-            console.log("Error al insertar", error);
-        })
+        const url = slug(name.toLowerCase());
+        const project = await Projects.create({
+            name,
+            url
+        });
+        res.redirect('/');
     }
 
 };

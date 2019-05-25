@@ -10,11 +10,13 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-validator": "^5.3.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "mysql2": "^1.6.5",
     "pug": "^2.0.0-beta11",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.8.6",
+    "slug": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"

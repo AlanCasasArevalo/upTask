@@ -16,6 +16,7 @@
     "mysql2": "^1.6.5",
     "pug": "^2.0.0-beta11",
     "sequelize": "^5.8.6",
+    "shortid": "^2.2.14",
     "slug": "^1.1.0"
   },
   "devDependencies": {

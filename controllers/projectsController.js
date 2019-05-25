@@ -7,19 +7,33 @@ exports.projectsHome = async (req, res) => {
         projects
     });
 };
-exports.projectsNewProjects = (req, res) => {
+exports.projectsNewProjects = async (req, res) => {
+    const projects = await Projects.findAll();
     res.render('newProjects', {
-        pageName: "New project"
+        pageName: "New project",
+        projects
     });
 };
 
-exports.projectByUrl = (req, res) => {
-    res.send('Listo')
+exports.projectByUrl = async (req, res, next) => {
+    const projects = await Projects.findAll();
+
+    const project = await Projects.findOne({
+        where: {
+            url: req.params.url
+        }
+    });
+
+    if (!project) return next();
+    res.render('tasks', {
+        pageName: 'Project task',
+        project,
+        projects
+    });
 };
 
 exports.newProject = async (req, res) => {
-    // console.log(req.body);
-    // console.log(name);
+    const projects = await Projects.findAll();
     const name = req.body.name;
 
     let errors = [];
@@ -34,7 +48,8 @@ exports.newProject = async (req, res) => {
     if (errors.length > 0) {
         res.render('newProjects', {
             pageName: 'New project',
-            errors
+            errors,
+            projects
         })
     } else {
         // No hay errores

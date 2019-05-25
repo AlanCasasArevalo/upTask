@@ -13,6 +13,8 @@ module.exports = function () {
         projectsController.newProject
     );
 
+    // Lista de projectos
+    router.get('/projects/:url', projectsController.projectByUrl);
     return router;
 };
 

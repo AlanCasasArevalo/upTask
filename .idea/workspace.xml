@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54dbf080-b6d5-4232-b40c-844bc63c3a2d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/projectsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/projectsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/projectsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="21">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -37,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Projects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state>
+              <caret column="39" selection-start-column="39" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -76,8 +73,8 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$USER_HOME$/.zshrc" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/models/Projects.js" />
         <option value="$PROJECT_DIR$/controllers/projectsController.js" />
+        <option value="$PROJECT_DIR$/models/Projects.js" />
       </list>
     </option>
   </component>
@@ -201,12 +198,12 @@
       <workItem from="1558279674809" duration="2278000" />
       <workItem from="1558293774682" duration="212000" />
       <workItem from="1558808005130" duration="277000" />
-      <workItem from="1558808353908" duration="2362000" />
+      <workItem from="1558808353908" duration="2931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18969000" />
+    <option name="totallyTimeSpent" value="19538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -229,7 +226,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3024236" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3340358" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.59009486" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32944915" />
@@ -344,17 +341,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Projects.js">
+    <entry file="file://$PROJECT_DIR$/controllers/projectsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/projectsController.js">
+    <entry file="file://$PROJECT_DIR$/models/Projects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
         </state>
       </provider>
     </entry>

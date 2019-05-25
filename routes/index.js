@@ -15,6 +15,8 @@ module.exports = function () {
 
     // Lista de projectos
     router.get('/projects/:url', projectsController.projectByUrl);
+
+    router.get('/projects/edit/:id', projectsController.editForm);
     return router;
 };
 

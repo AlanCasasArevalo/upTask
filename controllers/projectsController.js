@@ -16,13 +16,15 @@ exports.projectsNewProjects = async (req, res) => {
 };
 
 exports.projectByUrl = async (req, res, next) => {
-    const projects = await Projects.findAll();
+    const projectsPromise = await Projects.findAll();
 
-    const project = await Projects.findOne({
+    const projectPromise = await Projects.findOne({
         where: {
             url: req.params.url
         }
     });
+    const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
+
 
     if (!project) return next();
     res.render('tasks', {
@@ -31,6 +33,7 @@ exports.projectByUrl = async (req, res, next) => {
         projects
     });
 };
+
 
 exports.newProject = async (req, res) => {
     const projects = await Projects.findAll();
@@ -59,5 +62,21 @@ exports.newProject = async (req, res) => {
         });
         res.redirect('/');
     }
+};
 
+exports.editForm = async (req, res) => {
+    const projectsPromise = await Projects.findAll();
+
+    const projectPromise = await Projects.findOne({
+        where: {
+            id: req.params.id
+        }
+    });
+    const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
+
+    res.render('newProjects', {
+        pageName: 'Edit project',
+        project,
+        projects
+    })
 };

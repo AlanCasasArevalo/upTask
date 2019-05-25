@@ -24,8 +24,8 @@ html(lang="es")
                             if (projects.length > 0)
                                 each project in projects
                                     li
-                                        a(href="#")= project.name
+                                        a(href=`/projects/${project.url}`)= project.name
 
             block container
 
-            pre= vardump(projects)
+            //pre= vardump(projects)

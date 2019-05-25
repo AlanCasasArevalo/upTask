@@ -13,6 +13,10 @@ exports.projectsNewProjects = (req, res) => {
     });
 };
 
+exports.projectByUrl = (req, res) => {
+    res.send('Listo')
+};
+
 exports.newProject = async (req, res) => {
     // console.log(req.body);
     // console.log(name);

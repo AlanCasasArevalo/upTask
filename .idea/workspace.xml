@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54dbf080-b6d5-4232-b40c-844bc63c3a2d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/projectsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/projectsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/jj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +21,40 @@
     <splitter split-orientation="horizontal" split-proportion="0.4763368">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/controllers/projectsController.js">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/dist/bundle.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="682">
-                  <caret line="109" column="26" lean-forward="true" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+                <state>
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="138">
+                  <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webpack.config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="278">
+                  <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/jj">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="373">
+                  <caret line="67" lean-forward="true" selection-end-line="67" />
                 </state>
               </provider>
             </entry>
@@ -30,7 +62,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/newProjects.pug">
               <provider selected="true" editor-type-id="text-editor">
@@ -44,7 +76,7 @@
             <entry file="file://$PROJECT_DIR$/views/mixins/projectCreate.pug">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="207">
-                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                  <caret line="9" selection-start-line="9" selection-end-line="9" />
                 </state>
               </provider>
             </entry>
@@ -52,8 +84,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
-                  <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+                <state relative-caret-position="132">
+                  <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -66,8 +98,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSON" />
-        <option value="JavaScript File" />
         <option value="Pug File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -82,7 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/views/scratch.jade" />
         <option value="$PROJECT_DIR$/views/us.pug.js" />
@@ -101,6 +132,10 @@
         <option value="$PROJECT_DIR$/views/mixins/projectCreate.pug" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/controllers/projectsController.js" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/views/jj" />
       </list>
     </option>
   </component>
@@ -118,6 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,6 +179,23 @@
             <path>
               <item name="upTask" type="b2602c69:ProjectViewProjectNode" />
               <item name="upTask" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upTask" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upTask" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upTask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upTask" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -160,7 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,11 +283,12 @@
       <workItem from="1558293774682" duration="212000" />
       <workItem from="1558808005130" duration="277000" />
       <workItem from="1558808353908" duration="11166000" />
+      <workItem from="1558854163570" duration="1682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27773000" />
+    <option name="totallyTimeSpent" value="29455000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -250,22 +303,22 @@
     <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13365282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13471779" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5184405" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6902002" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5184405" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5036881" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32944915" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32944915" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.38145417" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.6164383" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -339,13 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-globals-stub.js" />
     <entry file="file://$USER_HOME$/.zshrc">
       <provider selected="true" editor-type-id="text-editor">
@@ -413,21 +459,54 @@
     <entry file="file://$PROJECT_DIR$/views/mixins/projectCreate.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="132">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/projectsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="109" column="26" lean-forward="true" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+        <state relative-caret-position="245">
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/dist/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/jj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="67" lean-forward="true" selection-end-line="67" />
         </state>
       </provider>
     </entry>

@@ -5,9 +5,7 @@ include mixins/projectCreate
 block container
     .contenido-principal
         h1 #{pageName}
-
-        pre= vardump(project)
-
+        //pre= vardump(project)
         if errors
             each error in errors
                 .alerta= error.message

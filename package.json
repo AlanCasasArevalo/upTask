@@ -8,6 +8,7 @@
     "watch": "webpack --w --mode development"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "latest",
     "concurrently": "^4.1.0",
     "cookie-parser": "~1.4.3",
@@ -20,7 +21,8 @@
     "pug": "^2.0.0-beta11",
     "sequelize": "^5.8.6",
     "shortid": "^2.2.14",
-    "slug": "^1.1.0"
+    "slug": "^1.1.0",
+    "sweetalert2": "^8.11.6"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

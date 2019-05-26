@@ -80,3 +80,33 @@ exports.editForm = async (req, res) => {
         projects
     })
 };
+
+exports.updateProjects = async (req, res) => {
+    const projects = await Projects.findAll();
+    const name = req.body.name;
+
+    let errors = [];
+
+    if (!name) {
+        errors.push({
+            message: 'Tienes que agregar un nombre al campo'
+        });
+        console.log(errors);
+    }
+
+    if (errors.length > 0) {
+        res.render('newProjects', {
+            pageName: 'New project',
+            errors,
+            projects
+        })
+    } else {
+        // No hay errores
+        // insertar en la base de datos
+        const project = await Projects.update(
+            { name },
+            { where: { id: req.params.id }}
+        );
+        res.redirect('/');
+    }
+};

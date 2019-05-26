@@ -4,6 +4,6 @@ block container
         h1 #{pageName} - #{project.name}
             .contenedor-acciones
                 a(href=`/projects/edit/${project.id}` class="boton") Editar
-                button#delete-project(type="button" class="boton eliminar") Eliminar
+                button#delete-project(data-project-url=project.url type="button" class="boton eliminar") Eliminar
 
-        pre= vardump(project)
+        //pre= vardump(project)

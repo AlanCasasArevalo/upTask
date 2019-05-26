@@ -22,6 +22,10 @@ module.exports = function () {
         body('name').not().isEmpty().trim().escape(),
         projectsController.updateProjects
     );
+    // Eliminar proyecto
+    router.delete('/projects/:url',
+        projectsController.deleteProjects
+    );
     return router;
 };
 

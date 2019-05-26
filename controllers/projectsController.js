@@ -110,3 +110,15 @@ exports.updateProjects = async (req, res) => {
         res.redirect('/');
     }
 };
+
+exports.deleteProjects = async (req, res, next) => {
+    console.log('parametros del delete', req);
+    const { projectURL } = req.query;
+    const result = await Projects.destroy({
+        where: {
+            url: projectURL
+        }
+    });
+    res.send('Proyecto eliminado correctamente');
+};
+

@@ -37,7 +37,7 @@ if (deleteButton && typeof deleteButton !== 'undefined') {
                         }, 1500)
                     })
                     .catch(function (error) {
-                        console.log('Error al hacer la eliminacion de la base de datos.', error)
+                        console.log('Error al hacer la eliminacion de la base de datos.', error);
                         Swal.fire(
                             'Error',
                             'Lo sentimos no se ha podido borrar su proyecto',

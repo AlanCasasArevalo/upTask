@@ -119,6 +119,12 @@ exports.deleteProjects = async (req, res, next) => {
             url: projectURL
         }
     });
+
+    // Si no se ha podido hacer el borrado del proyecto
+    if (!result){
+        return next()
+    }
+
     res.send('Proyecto eliminado correctamente');
 };
 

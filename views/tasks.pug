@@ -1,6 +1,15 @@
 extends  layout
 block container
     .contenido-principal
+
+        form.agregar-tarea(action=`/projects/${project.url}` method="POST")
+            .campo
+                label(for="task") Tarea:
+                input.nombre-tarea(type="text" name="task" placeholder="Nombre de la tarea")
+            .campo.enviar
+                input.boton.nueva-tarea(type="submit" value="Agregar")
+
+
         h1 #{pageName} - #{project.name}
             .contenedor-acciones
                 a(href=`/projects/edit/${project.id}` class="boton") Editar

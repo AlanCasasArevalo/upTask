@@ -8,6 +8,8 @@ const helpers = require('./helpers/helpers');
 
 // Modelo
 require('./models/Projects');
+require('./models/Tasks');
+
 //Conexion base de datos
 const db = require('./config/db');
 db.sync()

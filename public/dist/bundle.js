@@ -426,7 +426,7 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/projects */ \"./public/js/modules/projects.js\");\n\n\n//# sourceURL=webpack:///./public/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/projects */ \"./public/js/modules/projects.js\");\n/* harmony import */ var _modules_tasks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tasks */ \"./public/js/modules/tasks.js\");\n\n\n\n//# sourceURL=webpack:///./public/js/app.js?");
 
 /***/ }),
 
@@ -439,6 +439,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ \"./node_modules/sweetalert2/dist/sweetalert2.all.js\");\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar deleteButton = document.querySelector('#delete-project');\n\nif (deleteButton && typeof deleteButton !== 'undefined') {\n  deleteButton.addEventListener('click', function (event) {\n    var projectURL = event.target.dataset.projectUrl;\n    console.log('projectURL', projectURL);\n    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({\n      title: 'Deseas borrar el proyecto',\n      text: \"Un proyecto no se puede recuperar\",\n      type: 'warning',\n      showCancelButton: true,\n      confirmButtonColor: '#3085d6',\n      cancelButtonColor: '#d33',\n      confirmButtonText: 'Si, borrar',\n      cancelButtonText: 'No, Cancelar'\n    }).then(function (result) {\n      if (result.value) {\n        // location.origin te da la direccion del path http://localhost:3000\n        // location.pathname te da el end point /projects/tienda-virtual-de-bibi-nZFPSOfwZ\n        // haciendo la concatenacion de ambos metodos te da la url completa.\n        var url = \"\".concat(location.origin).concat(location.pathname); // console.log('url', url);\n        //peticion axios\n\n        axios__WEBPACK_IMPORTED_MODULE_1___default.a[\"delete\"](url, {\n          params: {\n            projectURL: projectURL\n          }\n        }).then(function (response) {\n          console.log('respuesta al hacer el borrado contra base de datos', response);\n          sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Borrado', response.data, 'success');\n          setTimeout(function () {\n            window.location.href = '/';\n          }, 1500);\n        })[\"catch\"](function (error) {\n          console.log('Error al hacer la eliminacion de la base de datos.', error);\n          sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Error', 'Lo sentimos no se ha podido borrar su proyecto', 'error');\n        });\n      }\n    });\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (deleteButton);\n\n//# sourceURL=webpack:///./public/js/modules/projects.js?");
+
+/***/ }),
+
+/***/ "./public/js/modules/tasks.js":
+/*!************************************!*\
+  !*** ./public/js/modules/tasks.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nvar tasks = document.querySelector('.listado-pendientes');\n\nif (tasks && typeof tasks !== 'undefined') {\n  tasks.addEventListener('click', function (event) {\n    if (event.target.classList.contains('fa-check-circle')) {\n      var icon = event.target;\n      var taskId = icon.parentElement.parentElement.dataset.task;\n      var url = \"\".concat(location.origin, \"/tasks/\").concat(taskId);\n      axios.patch(url, {\n        taskId: taskId\n      }).then(function (response) {\n        if (response.status === 202) {\n          icon.classList.toggle('completo');\n        }\n      })[\"catch\"](function (response) {\n        if (response.status === 500) {}\n      });\n    } else if (event.target.classList.contains('fa-trash')) {} else {}\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tasks);\n\n//# sourceURL=webpack:///./public/js/modules/tasks.js?");
 
 /***/ })
 

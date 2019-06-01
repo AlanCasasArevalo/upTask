@@ -55,7 +55,33 @@ exports.addNewTask = async (req, res, next) => {
         }
 
     }
+};
 
+exports.updateTask = async (req, res, next) => {
+    const id = req.params.id;
+    const task = await Tasks.findOne({
+        where: {
+            id: id
+        }
+    });
+
+    //Cambiar estado
+    let status = 0;
+    if (task.status === status) {
+        status = 1;
+    }
+    task.status = status;
+    const result = await task.save();
+
+    if (result && typeof result !== 'undefined') {
+        res.status(202).send('Actualizado');
+        // res.status(202).redirect(`/`);
+    } else {
+        res.status(500).send({
+            message: 'Error en el servidor, no se pudo actualizar la peticion'
+        });
+        return next()
+    }
 };
 
 

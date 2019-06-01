@@ -20,13 +20,13 @@ block container
                     .listado-pendientes
                         ul
                             each task in tasks
-                                li.tarea
+                                li.tarea(data-task=task.id)
                                     p= task.name
                                     .acciones
                                         if (task.status)
                                             i.fas.fa-check-circle.completo
                                         else
-                                            i.far.fa-check-circle
+                                            i.fas.fa-check-circle
                                         i.fas.fa-trash
 
         //<i class="fas fa-clipboard-check"></i>

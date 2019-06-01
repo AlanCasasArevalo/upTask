@@ -13,10 +13,13 @@ if (tasks && typeof tasks !== 'undefined'){
                     taskId
                 })
                 .then(function (response) {
-                    console.log('', response)
+                    if (response.status === 202){
+                        icon.classList.toggle('completo')
+                    }
                 })
                 .catch(function (response) {
-                    console.log('', response)
+                    if (response.status === 500){
+                    }
                 })
         } else if (event.target.classList.contains('fa-trash')){
         } else {

@@ -20,7 +20,7 @@ block container
                     .listado-pendientes
                         ul
                             each task in tasks
-                                li.tarea
+                                li.tarea(data-task=task.id)
                                     p= task.name
                                     .acciones
                                         if (task.status)

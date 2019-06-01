@@ -15,4 +15,20 @@ block container
                 a(href=`/projects/edit/${project.id}` class="boton") Editar
                 button#delete-project(data-project-url=project.url type="button" class="boton eliminar") Eliminar
 
-        //pre= vardump(project)
+            if (tasks && typeof tasks !== 'undefined')
+                if (tasks.length > 0)
+                    .listado-pendientes
+                        ul
+                            each task in tasks
+                                li.tarea
+                                    p= task.name
+                                    .acciones
+                                        if (task.status)
+                                            i.fas.fa-check-circle.completo
+                                        else
+                                            i.far.fa-check-circle
+                                        i.fas.fa-trash
+
+        //<i class="fas fa-clipboard-check"></i>
+
+        //pre= vardump(tasks)

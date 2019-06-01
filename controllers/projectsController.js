@@ -26,13 +26,23 @@ exports.projectByUrl = async (req, res, next) => {
     });
     const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
 
-    
+    //Consultar tareas del proyecto actual
+    const tasks = await Tasks.findAll({
+        where: {
+            ProjectId: project.id
+        }
+        // Con include te traes el proyecto al cual esta asignada la tarea
+        // include: [
+        //     { model: Projects }
+        // ]
+    });
 
     if (!project) return next();
     res.render('tasks', {
         pageName: 'Project task',
         project,
-        projects
+        projects,
+        tasks
     });
 };
 

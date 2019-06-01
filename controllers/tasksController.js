@@ -85,6 +85,25 @@ exports.updateTask = async (req, res, next) => {
 };
 
 
+exports.deleteTask = async (req, res, next) => {
+    const id = req.params.id;
+    const result = await Tasks.destroy({
+        where: {
+            id: id
+        }
+    });
+
+    if (result && typeof result !== 'undefined') {
+        res.status(202).send('Borrado');
+    } else {
+        res.status(500).send({
+            message: 'Error en el servidor, no se pudo borrar la peticion'
+        });
+        return next()
+    }
+};
+
+
 
 
 

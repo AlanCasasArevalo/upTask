@@ -6,7 +6,7 @@ const deleteButton = document.querySelector('#delete-project');
 if (deleteButton && typeof deleteButton !== 'undefined') {
     deleteButton.addEventListener('click', (event) => {
         const projectURL = event.target.dataset.projectUrl
-        console.log('projectURL', projectURL)
+        console.log('projectURL', projectURL);
         Swal.fire({
             title: 'Deseas borrar el proyecto',
             text: "Un proyecto no se puede recuperar",
@@ -44,7 +44,7 @@ if (deleteButton && typeof deleteButton !== 'undefined') {
                             'error'
                         );
                     });
-                
+
 
             }
         })

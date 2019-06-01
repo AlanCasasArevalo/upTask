@@ -40,6 +40,11 @@ module.exports = function () {
         tasksController.updateTask
     );
 
+    //Borrar tarea task
+    router.delete('/tasks/:id',
+        tasksController.deleteTask
+    );
+
     return router;
 };
 

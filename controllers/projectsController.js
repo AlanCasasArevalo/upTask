@@ -143,7 +143,7 @@ exports.updateProjects = async (req, res) => {
 };
 
 exports.deleteProjects = async (req, res, next) => {
-    console.log('parametros del delete', req);
+    // console.log('parametros del delete', req);
     const { projectURL } = req.query;
     const result = await Projects.destroy({
         where: {

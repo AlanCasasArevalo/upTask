@@ -55,7 +55,10 @@ exports.addNewTask = async (req, res, next) => {
         }
 
     }
+};
 
+exports.updateTask = async (req, res) => {
+   res.send('eeeeeeey brother')
 };
 
 

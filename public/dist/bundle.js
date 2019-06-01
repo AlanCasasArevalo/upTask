@@ -450,7 +450,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swee
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar tasks = document.querySelector('.listado-pendientes');\n\nif (tasks && typeof tasks !== 'undefined') {\n  tasks.addEventListener('click', function (event) {\n    if (event.target.classList.contains('fa-check-circle')) {\n      var icon = event.target;\n      var taskId = icon.parentElement.parentElement.dataset.task;\n      console.log('', taskId);\n    } else if (event.target.classList.contains('fa-trash')) {} else {}\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tasks);\n\n//# sourceURL=webpack:///./public/js/modules/tasks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nvar axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nvar tasks = document.querySelector('.listado-pendientes');\n\nif (tasks && typeof tasks !== 'undefined') {\n  tasks.addEventListener('click', function (event) {\n    if (event.target.classList.contains('fa-check-circle')) {\n      var icon = event.target;\n      var taskId = icon.parentElement.parentElement.dataset.task;\n      var url = \"\".concat(location.origin, \"/tasks/\").concat(taskId);\n      axios.patch(url, {\n        taskId: taskId\n      }).then(function (response) {\n        console.log('', response);\n      })[\"catch\"](function (response) {\n        console.log('', response);\n      });\n    } else if (event.target.classList.contains('fa-trash')) {} else {}\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tasks);\n\n//# sourceURL=webpack:///./public/js/modules/tasks.js?");
 
 /***/ })
 

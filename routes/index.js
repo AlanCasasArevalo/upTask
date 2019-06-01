@@ -28,11 +28,17 @@ module.exports = function () {
         projectsController.deleteProjects
     );
 
+    //TASKS
     // Crear nueva tarea
     router.post('/projects/:url',
         tasksController.addNewTask
     );
 
+    //Actualizar tarea task
+    // PUT reescribe el elemento que queremos actualizar mientras que path solo cambia una propiedad del elemento
+    router.patch('/tasks/:id',
+        tasksController.updateTask
+    );
 
     return router;
 };

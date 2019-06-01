@@ -1,4 +1,5 @@
 const Projects = require('../models/Projects');
+const Tasks = require('../models/Tasks');
 
 exports.projectsHome = async (req, res) => {
     const projects = await Projects.findAll();
@@ -25,6 +26,7 @@ exports.projectByUrl = async (req, res, next) => {
     });
     const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
 
+    
 
     if (!project) return next();
     res.render('tasks', {
@@ -60,7 +62,13 @@ exports.newProject = async (req, res) => {
         const project = await Projects.create({
             name
         });
-        res.redirect('/');
+
+        // Esto es si en vez de querer renderizar un resultado queremos enviar json al front end
+        // res.status(201).json({
+        //     message: 'OK',
+        //     project
+        // });
+        res.status(201).redirect('/');
     }
 };
 
@@ -73,6 +81,13 @@ exports.editForm = async (req, res) => {
         }
     });
     const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
+
+    // Esto es si en vez de querer renderizar un resultado queremos enviar json al front end
+    // res.status(202).json({
+    //     message: 'OK',
+    //     project,
+    //     projects
+    // });
 
     res.render('newProjects', {
         pageName: 'Edit project',
@@ -107,6 +122,12 @@ exports.updateProjects = async (req, res) => {
             { name },
             { where: { id: req.params.id }}
         );
+
+        // Esto es si en vez de querer renderizar un resultado queremos enviar json al front end
+        // res.status(202).json({
+        //     message: 'OK',
+        //     project,
+        // });
         res.redirect('/');
     }
 };
@@ -124,6 +145,11 @@ exports.deleteProjects = async (req, res, next) => {
     if (!result){
         return next()
     }
+
+    // Esto es si en vez de querer renderizar un resultado queremos enviar json al front end
+    // res.status(202).json({
+    //     message: 'Proyecto borrado',
+    // });
 
     res.send('Proyecto eliminado correctamente');
 };

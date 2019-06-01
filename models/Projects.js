@@ -5,12 +5,13 @@ const shortid = require('shortid');
 
 const Projects = db.define('Projects', {
     id: {
-        type: sequelize.INTEGER,
+        //Ponemos los valores entre parenetesis para evitar consumo excesivo de memoria
+        type: sequelize.INTEGER(50),
         primaryKey: true,
         autoIncrement: true
     },
-    name: sequelize.STRING,
-    url: sequelize.STRING
+    name: sequelize.STRING(30),
+    url: sequelize.STRING(40)
 }, {
     // Los hooks son parte del ciclo de vida de insercion en la base de datos de Sequelize
     hooks: {

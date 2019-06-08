@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
+const _constants = require('.././src/config/constants');
 
-const sequelize = new Sequelize('upTaskNode', 'root', 'Pegasus1313', {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: '3306',
+const sequelize = new Sequelize(_constants.SEQUELIZE_SETUP.TABLE_NAME, _constants.SEQUELIZE_SETUP.ADMIN_NAME, _constants.SEQUELIZE_SETUP.PASSWORD, {
+    host: _constants.SEQUELIZE_SETUP.HOST,
+    dialect: _constants.SEQUELIZE_SETUP.DIALECT,
+    port: _constants.SEQUELIZE_SETUP.PORT,
     operatorsAliases: false,
     define: {
         timestamp: false

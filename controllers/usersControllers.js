@@ -1,26 +1,33 @@
 const Users = require('../models/Users');
-
+const _constant = require('../src/config/constants');
 
 exports.formCreateAccount = (req, res) => {
-    res.render('createAccount', {
-        pageName: 'Crear nueva cuenta en Uptask'
+    res.render(_constant.LITERALS_USER_CONTROLLER.PAGE_NAME_RENDER, {
+        pageName: _constant.LITERALS_USER_CONTROLLER.PAGE_NAME
     })
 };
 
-exports.createAccount = (req, res) => {
+exports.createAccount = async (req, res) => {
     const {email, password} = req.body;
 
     if (email && typeof email !== 'undefined' && password && typeof password !== 'undefined') {
-        Users.create({
-            email,
-            password
-        })
-        .then(() => {
-            res.redirect('/login')
-        })
-        .catch(() => {
-            res.redirect('/')
-        })
+
+        try {
+            await Users.create({
+                email,
+                password
+            })
+            .then(() => {
+                res.redirect(_constant.LITERALS_USER_CONTROLLER.REDIRECTION_USER_CREATED)
+            })
+        } catch (errors) {
+            req.flash('error', errors.errors.map(error => error.message));
+            res.render(_constant.LITERALS_USER_CONTROLLER.PAGE_NAME_RENDER, {
+                errors: req.flash(),
+                pageName: _constant.LITERALS_USER_CONTROLLER.PAGE_NAME
+            })
+        }
+
     } else {
         res.redirect('/')
     }

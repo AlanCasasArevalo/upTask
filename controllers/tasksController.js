@@ -1,5 +1,6 @@
 const Projects = require('../models/Projects');
 const Tasks = require('../models/Tasks');
+const _constants = require('../src/config/constants');
 
 exports.addNewTask = async (req, res, next) => {
     // con esto obtenemos el projecto actual
@@ -18,14 +19,14 @@ exports.addNewTask = async (req, res, next) => {
 
     if (!name) {
         errors.push({
-            message: 'Tiene que agregar un nombre al campo'
+            message: _constants.LITERALS_TASKS_CONTROLLER.NEW_TASK_ERROR_MESSAGE
         });
         return next();
     }
 
     if (errors.length > 0) {
-        res.render('newTasks', {
-            pageName: 'New Task',
+        res.render(_constants.LITERALS_TASKS_CONTROLLER.PAGE_NEW_TASK_NAME_RENDER, {
+            pageName: _constants.LITERALS_TASKS_CONTROLLER.PAGE_NEW_TASK_NAME,
             errors,
             tasks
         })
@@ -45,8 +46,8 @@ exports.addNewTask = async (req, res, next) => {
         // });
 
         if (!name) {
-            res.render('newTasks', {
-                pageName: 'New Task',
+            res.render(_constants.LITERALS_TASKS_CONTROLLER.PAGE_NEW_TASK_NAME_RENDER, {
+                pageName: _constants.LITERALS_TASKS_CONTROLLER.PAGE_NEW_TASK_NAME,
                 errors,
                 tasks
             })
@@ -74,11 +75,11 @@ exports.updateTask = async (req, res, next) => {
     const result = await task.save();
 
     if (result && typeof result !== 'undefined') {
-        res.status(202).send('Actualizado');
+        res.status(202).send(_constants.LITERALS_TASKS_CONTROLLER.UPDATE_TASK_SUCCESS_MESSAGE_TO_SEND);
         // res.status(202).redirect(`/`);
     } else {
         res.status(500).send({
-            message: 'Error en el servidor, no se pudo actualizar la peticion'
+            message: _constants.LITERALS_TASKS_CONTROLLER.UPDATE_TASK_FAIL_MESSAGE_TO_SEND
         });
         return next()
     }
@@ -94,10 +95,10 @@ exports.deleteTask = async (req, res, next) => {
     });
 
     if (result && typeof result !== 'undefined') {
-        res.status(202).send('Borrado');
+        res.status(202).send(_constants.LITERALS_TASKS_CONTROLLER.DELETE_TASK_SUCCESS_MESSAGE_TO_SEND);
     } else {
         res.status(500).send({
-            message: 'Error en el servidor, no se pudo borrar la peticion'
+            message: _constants.LITERALS_TASKS_CONTROLLER.DELETE_TASK_FAIL_MESSAGE_TO_SEND
         });
         return next()
     }

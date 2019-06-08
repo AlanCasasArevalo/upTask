@@ -61,6 +61,9 @@ var constants = {
         SWAL_TITLE: 'Proyecto completado',
         SWAL_MESSAGE: 'Felicidades, has terminado todas tus tareas',
         SWAL_TYPE: 'success'
+    },
+    MAIN_INDEX_LITERALS: {
+        SESSION_SECRET_SEED: 'SESSION_SECRET_SEED'
     }
 
 };

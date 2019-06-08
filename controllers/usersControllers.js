@@ -23,8 +23,10 @@ exports.createAccount = async (req, res) => {
         } catch (errors) {
             req.flash('error', errors.errors.map(error => error.message));
             res.render(_constant.LITERALS_USER_CONTROLLER.PAGE_NAME_RENDER, {
-                errors: req.flash(),
-                pageName: _constant.LITERALS_USER_CONTROLLER.PAGE_NAME
+                messages: req.flash(),
+                pageName: _constant.LITERALS_USER_CONTROLLER.PAGE_NAME,
+                email,
+                password
             })
         }
 

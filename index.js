@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const helpers = require('./helpers/helpers');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 global._constants = require('./src/config/constants');
 
 // Modelo
@@ -22,17 +24,25 @@ db.sync()
     .catch(error => console.log(error));
 
 const app = express();
+app.use(express.static('public'));
+app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(expressValidator());
 
-app.use(express.static('public'));
 
-app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, './views'));
 
 app.use(flash());
+app.use(cookieParser());
+
+// Sessions nos permite navegar entre paginas sin re autenticar
+app.use(session({
+    secret: _constants.MAIN_INDEX_LITERALS.SESSION_SECRET_SEED,
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use((req, res, next) => {
     // con res.locals.vardump lo que hacemos es que se pueda acceder a vardump en cualquier archivo de la aplicacion

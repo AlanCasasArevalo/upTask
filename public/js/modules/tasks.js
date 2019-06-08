@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import {progressUpdate} from "../functions/progress";
 
 const axios = require("axios");
 const tasks = document.querySelector('.listado-pendientes');
@@ -16,7 +17,8 @@ if (tasks && typeof tasks !== 'undefined') {
                 })
                 .then(function (response) {
                     if (response.status === 202) {
-                        icon.classList.toggle('completo')
+                        icon.classList.toggle('completo');
+                        progressUpdate()
                     }
                 })
                 .catch(function (response) {
@@ -59,6 +61,7 @@ if (tasks && typeof tasks !== 'undefined') {
                             }, 1500);
                             taskHTML.parentElement.removeChild(taskHTML);
                             console.log('taskHTML', taskHTML)
+                            progressUpdate()
                         }else {
                             Swal.fire(
                                 'Error',

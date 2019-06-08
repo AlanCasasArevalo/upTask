@@ -9,6 +9,7 @@ const helpers = require('./helpers/helpers');
 // Modelo
 require('./models/Projects');
 require('./models/Tasks');
+require('./models/Users');
 
 //Conexion base de datos
 const db = require('./config/db');
@@ -16,7 +17,7 @@ db.sync()
     .then(() => {
         console.log("Conectado a la base de datos.");
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log(error));
 
 const app = express();
 app.use(expressValidator());

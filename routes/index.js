@@ -3,6 +3,8 @@ const router = express.Router();
 const { body } = require('express-validator/check');
 const projectsController = require('../controllers/projectsController');
 const tasksController = require('../controllers/tasksController');
+const usersControllers = require('../controllers/usersControllers');
+
 module.exports = function () {
     router.get('/', projectsController.projectsHome);
 
@@ -43,6 +45,11 @@ module.exports = function () {
     //Borrar tarea task
     router.delete('/tasks/:id',
         tasksController.deleteTask
+    );
+
+    // Crear nueva cuenta
+    router.get('/create-account',
+        usersControllers.formCreateAccount
     );
 
     return router;

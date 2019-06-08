@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        include partials/header
+    body.login
+        .contenedor-formulario
+            h1 Crea tu cuenta en Uptask
+
+            form#formulario.caja.caja-login(method="POST" action="/crear-cuenta")
+                .campo
+                    label(for="email") E-mail:
+                    input(type="email" name="email" placeholder="Tu email por favor")
+                .campo
+                    label(for="password") E-mail:
+                    input(type="password" name="password" placeholder="Tu password por favor")
+                .campo.enviar
+                    input.boton(type="submit" value="Crear cuenta")
+                .campo
+                    a(href="/login") Volver a iniciar sesion
+
+        script(src="/dist/bundle.js")

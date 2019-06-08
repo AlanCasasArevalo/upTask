@@ -52,6 +52,10 @@ module.exports = function () {
         usersControllers.formCreateAccount
     );
 
+    router.post('/create-account',
+        usersControllers.createAccount
+    );
+
     return router;
 };
 

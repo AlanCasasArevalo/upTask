@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+const _constant = require('./../../../src/config/constants');
 
 export const progressUpdate = () => {
     const tasks = document.querySelectorAll('li.tarea');
@@ -9,9 +10,9 @@ export const progressUpdate = () => {
         percent.style.width = progress+'%';
         if (progress === 100) {
             Swal.fire(
-                'Proyecto completado',
-                'Felicidades, has terminado todas tus tareas',
-                'success'
+                _constant.PROGRESS_BAR_SWAL.SWAL_TITLE,
+                _constant.PROGRESS_BAR_SWAL.SWAL_MESSAGE,
+                _constant.PROGRESS_BAR_SWAL.SWAL_TYPE,
             );
         }
     }

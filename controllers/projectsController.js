@@ -1,17 +1,18 @@
 const Projects = require('../models/Projects');
 const Tasks = require('../models/Tasks');
+const _constants = require('../src/config/constants');
 
 exports.projectsHome = async (req, res) => {
     const projects = await Projects.findAll();
-    res.render('index', {
-        pageName: "Projects",
+    res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_HOME_NAME_RENDER, {
+        pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NAME,
         projects
     });
 };
 exports.projectsNewProjects = async (req, res) => {
     const projects = await Projects.findAll();
-    res.render('newProjects', {
-        pageName: "New project",
+    res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME_RENDER, {
+        pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME,
         projects
     });
 };
@@ -38,8 +39,9 @@ exports.projectByUrl = async (req, res, next) => {
     });
 
     if (!project) return next();
-    res.render('tasks', {
-        pageName: 'Project task',
+
+    res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_PROJECT_TASK_PROJECTS_RENDER, {
+        pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_PROJECT_TASK_PROJECTS_NAME,
         project,
         projects,
         tasks
@@ -55,14 +57,15 @@ exports.newProject = async (req, res) => {
 
     if (!name) {
         errors.push({
-            message: 'Tienes que agregar un nombre al campo'
+            message: _constants.LITERALS_PROJECTS_CONTROLLER.NEW_PROJECT_ERROR_MESSAGE
         });
         console.log(errors);
     }
 
     if (errors.length > 0) {
-        res.render('newProjects', {
-            pageName: 'New project',
+
+        res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME_RENDER, {
+            pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME,
             errors,
             projects
         })
@@ -99,8 +102,8 @@ exports.editForm = async (req, res) => {
     //     projects
     // });
 
-    res.render('newProjects', {
-        pageName: 'Edit project',
+    res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME_RENDER, {
+        pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_PROJECT_EDIT_PROJECT_NAME,
         project,
         projects
     })
@@ -114,14 +117,14 @@ exports.updateProjects = async (req, res) => {
 
     if (!name) {
         errors.push({
-            message: 'Tienes que agregar un nombre al campo'
+            message: _constants.LITERALS_PROJECTS_CONTROLLER.UPDATE_PROJECT_NAME_ERROR_MESSAGE
         });
         console.log(errors);
     }
 
     if (errors.length > 0) {
-        res.render('newProjects', {
-            pageName: 'New project',
+        res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME_RENDER, {
+            pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME,
             errors,
             projects
         })
@@ -160,7 +163,6 @@ exports.deleteProjects = async (req, res, next) => {
     // res.status(202).json({
     //     message: 'Proyecto borrado',
     // });
-
-    res.send('Proyecto eliminado correctamente');
+    res.send(_constants.LITERALS_PROJECTS_CONTROLLER.SUCCESS_DELETE_MESSAGE);
 };
 

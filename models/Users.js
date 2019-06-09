@@ -42,6 +42,12 @@ const Users = db.define(_constants.USER_MODEL_CONSTANT.USER_MODEL_NAME, {
         }
     }
 });
+
+Users.prototype.passwordVerification = function (password) {
+    // Este metod te permite comparar los passwords para ver si son iguales y permitir o no al usuario entrear.
+    return bcrypt.compareSync(password, this.password);
+};
+
 Users.hasMany(Projects);
 
 module.exports = Users;

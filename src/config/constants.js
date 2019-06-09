@@ -79,6 +79,12 @@ var constants = {
         DELETE_TASK_BY_ID: '/tasks/:id',
         USER_CREATE_NEW_ACCOUNT: '/create-account',
         LOGIN_ACCOUNT: '/login',
+    },
+    PASSPORT_LITERALS: {
+        USER_NAME_FIELD: 'email',
+        PASSWORD_FIELD: 'password',
+        DONE_MESSAGE_CALLBACK_USER_DOES_NOT_EXISTS: 'Esta cuenta no existe',
+        DONE_MESSAGE_CALLBACK_INCORRECT_PASSWORD: 'La contraseña no es correcta.',
     }
 
 };

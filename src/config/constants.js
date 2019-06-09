@@ -11,6 +11,8 @@ var constants = {
         PAGE_NAME: 'Crear nueva cuenta en Uptask',
         PAGE_NAME_RENDER: 'createAccount',
         REDIRECTION_USER_CREATED: '/login',
+        LOGIN_PAGE_NAME: 'Iniciar sesion en Uptask',
+        LOGIN_PAGE_NAME_RENDER: 'login',
     },
     LITERALS_PROJECTS_CONTROLLER: {
         PAGE_NAME: 'Projects',
@@ -64,6 +66,19 @@ var constants = {
     },
     MAIN_INDEX_LITERALS: {
         SESSION_SECRET_SEED: 'SESSION_SECRET_SEED'
+    },
+    INDEX_ROUTES_LITERALS: {
+        GET_PROJECTS_HOME: '/',
+        GET_POST_NEW_PROJECTS: '/new-projects',
+        GET_PROJECTS_BY_URL: '/projects/:url',
+        GET_EDIT_PROJECTS_BY_ID: '/projects/edit/:id',
+        POST_PROJECTS_BY_ID: '/new-projects/:id',
+        DELETE_PROJECTS_BY_URL: '/projects/:url',
+        POST_NEW_TASK_BY_PROJECT_URL: '/projects/:url',
+        PATCH_TASK_BY_ID: '/tasks/:id',
+        DELETE_TASK_BY_ID: '/tasks/:id',
+        USER_CREATE_NEW_ACCOUNT: '/create-account',
+        LOGIN_ACCOUNT: '/login',
     }
 
 };

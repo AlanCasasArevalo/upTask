@@ -35,3 +35,16 @@ exports.createAccount = async (req, res) => {
     }
 
 };
+
+
+exports.formLogin = (req, res) => {
+    res.render(_constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME_RENDER, {
+        pageName: _constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME
+    })
+};
+
+exports.loginAccount = (req, res) => {
+    res.render(_constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME_RENDER, {
+        pageName: _constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME
+    })
+};

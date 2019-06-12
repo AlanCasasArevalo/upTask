@@ -91,6 +91,7 @@ var constants = {
         AUTHENTICATION_SUCCESS_REDIRECT_URL: '/',
         AUTHENTICATION_FAILURE_REDIRECT_URL: '/login',
         POST_AUTHENTICATION: '/login',
+        BAD_REQUEST_MESSAGE: 'Ambos campos son obligatorios'
     }
 
 };

@@ -36,10 +36,11 @@ exports.createAccount = async (req, res) => {
 
 };
 
-
 exports.formLogin = (req, res) => {
+    const { error } = res.locals.messages
     res.render(_constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME_RENDER, {
-        pageName: _constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME
+        pageName: _constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME,
+        error
     })
 };
 

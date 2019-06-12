@@ -79,6 +79,7 @@ var constants = {
         DELETE_TASK_BY_ID: '/tasks/:id',
         USER_CREATE_NEW_ACCOUNT: '/create-account',
         LOGIN_ACCOUNT: '/login',
+        LOGOUT_ROUTE: '/logout',
     },
     PASSPORT_LITERALS: {
         USER_NAME_FIELD: 'email',

@@ -87,6 +87,12 @@ module.exports = function () {
         authController.userAuthentication
     );
 
+    router.get(_constants.INDEX_ROUTES_LITERALS.LOGOUT_ROUTE,
+        authController.closeSession
+    );
+
+
+
     return router;
 };
 

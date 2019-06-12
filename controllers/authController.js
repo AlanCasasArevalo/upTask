@@ -17,3 +17,10 @@ exports.userAuthenticaticated = (req, res, next) => {
         return res.redirect(_constants.LITERALS_AUTHENTICATION_CONTROLLER.POST_AUTHENTICATION);
     }
 };
+
+// Funcion para cerrar session
+exports.closeSession = (req, res, next) => {
+    req.session.destroy( () => {
+        res.redirect(_constants.LITERALS_AUTHENTICATION_CONTROLLER.AUTHENTICATION_SUCCESS_REDIRECT_URL)
+    })
+};

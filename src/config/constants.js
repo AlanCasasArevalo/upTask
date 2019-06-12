@@ -85,6 +85,12 @@ var constants = {
         PASSWORD_FIELD: 'password',
         DONE_MESSAGE_CALLBACK_USER_DOES_NOT_EXISTS: 'Esta cuenta no existe',
         DONE_MESSAGE_CALLBACK_INCORRECT_PASSWORD: 'La contraseña no es correcta.',
+    },
+    LITERALS_AUTHENTICATION_CONTROLLER: {
+        AUTHENTICATION_STRATEGY: 'local',
+        AUTHENTICATION_SUCCESS_REDIRECT_URL: '/',
+        AUTHENTICATION_FAILURE_REDIRECT_URL: '/login',
+        POST_AUTHENTICATION: '/login',
     }
 
 };

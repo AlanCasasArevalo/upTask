@@ -4,7 +4,9 @@ const { body } = require('express-validator/check');
 const projectsController = require('../controllers/projectsController');
 const tasksController = require('../controllers/tasksController');
 const usersControllers = require('../controllers/usersControllers');
+const authController = require('../controllers/authController');
 const _constants = require('../src/config/constants');
+
 
 module.exports = function () {
 
@@ -64,8 +66,8 @@ module.exports = function () {
         usersControllers.formLogin
     );
 
-    router.post(_constants.INDEX_ROUTES_LITERALS.LOGIN_ACCOUNT,
-        usersControllers.loginAccount
+    router.post(_constants.LITERALS_AUTHENTICATION_CONTROLLER.POST_AUTHENTICATION,
+        authController.userAuthentication
     );
 
     return router;

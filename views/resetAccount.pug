@@ -6,12 +6,8 @@ html(lang="es")
         .contenedor-formulario
             h1= pageName
             p Agrega tu e-mail para restablecer tu contraseña
-            if locals.messages
-                .alertas
-                    each category in Object.keys(locals.messages)
-                        each error in messages [category]
-                            .alerta(class=`${category}`)
-                                p= error
+
+            include partials/errors
 
             form.caja-login(method="POST" action="/reset-account")
                 .campo

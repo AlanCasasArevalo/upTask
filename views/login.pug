@@ -6,8 +6,7 @@ html(lang="es")
         .contenedor-formulario
             h1 Inicia sesion en Uptask
 
-            if error
-                p.alerta.error= error
+            include partials/errors
 
             form#formulario.caja.caja-login(method="POST" action="/login")
                 .campo

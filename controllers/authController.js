@@ -6,6 +6,8 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt-nodejs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const sendEmail = require('../handlers/mail');
+
 
 // Funcion para autenticar el usuario
 exports.userAuthentication = passport.authenticate(_constants.LITERALS_AUTHENTICATION_CONTROLLER.AUTHENTICATION_STRATEGY, {
@@ -53,7 +55,18 @@ exports.toSendToken = async (req, res, next) => {
 
         if (userSaved && typeof userSaved !== 'undefined') {
             // url de reset
-            const resetUrl = `http://${req.headers.host}/${_constant.INDEX_ROUTES_LITERALS.RESET_ACCOUNT}/${token}`
+            const resetUrl = `http://${req.headers.host}${_constant.INDEX_ROUTES_LITERALS.RESET_ACCOUNT}/${token}`;
+
+            await sendEmail.toSendMail({
+                from: '👻 UpTask <no-reply@uptask.com>',
+                to : userSaved.email,
+                subject: 'Resetear la contraseña Uptask',
+                file: 'resetPassword',
+                resetUrl,
+            });
+
+            req.flash('correcto', 'Revise su correo para poder actualizar la contraseña');
+            res.redirect('/login')
         }
     } else {
         req.flash('error', 'La cuenta no existe');
@@ -85,14 +98,13 @@ exports.tokenValidation = async (req, res, next) => {
 exports.updatePassword = async (req, res) => {
     const token = req.params.token;
     const password = req.body.password;
-    const expiration = [Op.gte];
 
     if (token && typeof token !== 'undefined') {
         const user = await Users.findOne({
             where: {
                 token,
                 expiration: {
-                    [Op.gte] : Date.now()
+                    [Op.gte]: Date.now()
                 }
             }
         });
@@ -106,7 +118,7 @@ exports.updatePassword = async (req, res) => {
 
             if (userPasswordUpdate && typeof userPasswordUpdate !== 'undefined') {
                 req.flash('correcto', 'Tu password se modifico correctamente');
-                res.render('login')
+                res.redirect('/login')
             } else {
                 req.flash('error', 'Usuario no se pudo guardar correctamente');
                 res.render('resetAccount')

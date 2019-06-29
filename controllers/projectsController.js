@@ -48,7 +48,6 @@ exports.projectByUrl = async (req, res, next) => {
     });
 };
 
-
 exports.newProject = async (req, res) => {
     const projects = await Projects.findAll();
     const name = req.body.name;
@@ -72,8 +71,12 @@ exports.newProject = async (req, res) => {
     } else {
         // No hay errores
         // insertar en la base de datos
+
+        const UserId = res.locals.user.id;
+
         const project = await Projects.create({
-            name
+            name,
+            UserId
         });
 
         // Esto es si en vez de querer renderizar un resultado queremos enviar json al front end

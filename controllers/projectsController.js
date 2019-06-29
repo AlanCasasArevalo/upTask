@@ -3,14 +3,28 @@ const Tasks = require('../models/Tasks');
 const _constants = require('../src/config/constants');
 
 exports.projectsHome = async (req, res) => {
-    const projects = await Projects.findAll();
+    const UserId = res.locals.user.id;
+
+    const projects = await Projects.findAll({
+        where: {
+            UserId
+        }
+    });
     res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_HOME_NAME_RENDER, {
         pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NAME,
         projects
     });
 };
+
 exports.projectsNewProjects = async (req, res) => {
-    const projects = await Projects.findAll();
+    const UserId = res.locals.user.id;
+
+    const projects = await Projects.findAll({
+        where: {
+            UserId
+        }
+    });
+
     res.render(_constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME_RENDER, {
         pageName: _constants.LITERALS_PROJECTS_CONTROLLER.PAGE_NEW_PROJECTS_NAME,
         projects
@@ -18,11 +32,19 @@ exports.projectsNewProjects = async (req, res) => {
 };
 
 exports.projectByUrl = async (req, res, next) => {
-    const projectsPromise = await Projects.findAll();
 
-    const projectPromise = await Projects.findOne({
+    const UserId = res.locals.user.id;
+
+    const projectsPromise = Projects.findAll({
         where: {
-            url: req.params.url
+            UserId
+        }
+    });
+
+    const projectPromise = Projects.findOne({
+        where: {
+            url: req.params.url,
+            UserId
         }
     });
     const [projects, project] = await Promise.all([projectsPromise, projectPromise]);
@@ -49,7 +71,14 @@ exports.projectByUrl = async (req, res, next) => {
 };
 
 exports.newProject = async (req, res) => {
-    const projects = await Projects.findAll();
+    const UserId = res.locals.user.id;
+
+    const projects = await Projects.findAll({
+        where: {
+            UserId
+        }
+    });
+
     const name = req.body.name;
 
     let errors = [];
@@ -89,7 +118,13 @@ exports.newProject = async (req, res) => {
 };
 
 exports.editForm = async (req, res) => {
-    const projectsPromise = await Projects.findAll();
+    const UserId = res.locals.user.id;
+
+    const projectsPromise = Projects.findAll({
+        where: {
+            UserId
+        }
+    });
 
     const projectPromise = await Projects.findOne({
         where: {
@@ -113,7 +148,15 @@ exports.editForm = async (req, res) => {
 };
 
 exports.updateProjects = async (req, res) => {
-    const projects = await Projects.findAll();
+
+    const UserId = res.locals.user.id;
+
+    const projectsPromise = Projects.findAll({
+        where: {
+            UserId
+        }
+    });
+
     const name = req.body.name;
 
     let errors = [];

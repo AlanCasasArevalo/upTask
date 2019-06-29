@@ -49,3 +49,10 @@ exports.loginAccount = (req, res) => {
         pageName: _constant.LITERALS_USER_CONTROLLER.LOGIN_PAGE_NAME
     })
 };
+
+// Funcion para reiniciar contraseña
+exports.formResetAccountPassword = (req, res, next) => {
+    res.render(_constant.LITERALS_USER_CONTROLLER.RESET_ACCOUNT_RENDER, {
+        pageName: _constant.LITERALS_USER_CONTROLLER.RESET_ACCOUNT_PAGE_NAME
+    })
+};

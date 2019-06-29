@@ -91,7 +91,21 @@ module.exports = function () {
         authController.closeSession
     );
 
+    router.get(_constants.INDEX_ROUTES_LITERALS.RESET_ACCOUNT,
+        usersControllers.formResetAccountPassword
+    );
 
+    router.post(_constants.INDEX_ROUTES_LITERALS.RESET_ACCOUNT,
+        authController.toSendToken
+    );
+
+    router.get('/reset-account/:token',
+        authController.tokenValidation
+    );
+
+    router.post('/reset-account/:token',
+        authController.updatePassword
+    );
 
     return router;
 };

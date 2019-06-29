@@ -78,6 +78,10 @@ module.exports = function () {
         usersControllers.createAccount
     );
 
+    router.get(_constants.INDEX_ROUTES_LITERALS.USER_CONFIRM_NEW_ACCOUNT,
+        usersControllers.confirmAccount
+    );
+
     // Iniciar sesion
     router.get(_constants.INDEX_ROUTES_LITERALS.LOGIN_ACCOUNT,
         usersControllers.formLogin

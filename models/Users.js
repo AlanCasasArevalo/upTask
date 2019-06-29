@@ -35,6 +35,10 @@ const Users = db.define(_constants.USER_MODEL_CONSTANT.USER_MODEL_NAME, {
             }
         }
     },
+    active: {
+        type: sequelize.INTEGER,
+        defaultValue: 0
+    },
     token: sequelize.STRING,
     expiration: sequelize.DATE
 }, {

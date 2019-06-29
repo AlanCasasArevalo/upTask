@@ -16,9 +16,10 @@ passport.use(
             try {
                 const user = await Users.findOne({
                     where: {
-                        email
+                        email,
+                        active: 1
                     }
-                })
+                });
                 // El usuario existe pero el password no coincide
                 if (!user.passwordVerification(password)) {
                     return done(null, false, {

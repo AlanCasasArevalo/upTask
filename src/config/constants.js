@@ -80,9 +80,11 @@ var constants = {
         PATCH_TASK_BY_ID: '/tasks/:id',
         DELETE_TASK_BY_ID: '/tasks/:id',
         USER_CREATE_NEW_ACCOUNT: '/create-account',
+        USER_CONFIRM_NEW_ACCOUNT: '/confirm/:email',
         LOGIN_ACCOUNT: '/login',
         LOGOUT_ROUTE: '/logout',
         RESET_ACCOUNT: '/reset-account',
+        CONFIRM_URL: '/confirm',
         RESET_ACCOUNT_BY_TOKEN: '/reset-account/:token'
     },
     PASSPORT_LITERALS: {

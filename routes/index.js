@@ -100,8 +100,11 @@ module.exports = function () {
     );
 
     router.get('/reset-account/:token',
-        authController.resetPassword
+        authController.tokenValidation
+    );
 
+    router.post('/reset-account/:token',
+        authController.updatePassword
     );
 
     return router;

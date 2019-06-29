@@ -2,6 +2,7 @@ var constants = {
     SEQUELIZE_SETUP: {
         TABLE_NAME: 'upTaskNode',
         ADMIN_NAME: 'root',
+        PASSWORD: 'Pegasus1313',
         HOST: 'localhost',
         PORT: '3306',
         DIALECT: 'mysql'

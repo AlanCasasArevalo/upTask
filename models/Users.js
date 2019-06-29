@@ -35,6 +35,8 @@ const Users = db.define(_constants.USER_MODEL_CONSTANT.USER_MODEL_NAME, {
             }
         }
     },
+    token: sequelize.STRING,
+    expiration: sequelize.DATE
 }, {
     hooks: {
         beforeCreate(user, options) {

@@ -2,7 +2,6 @@ var constants = {
     SEQUELIZE_SETUP: {
         TABLE_NAME: 'upTaskNode',
         ADMIN_NAME: 'root',
-        PASSWORD: 'YOUR_MYSWL_PASSWORD',
         HOST: 'localhost',
         PORT: '3306',
         DIALECT: 'mysql'
@@ -13,6 +12,8 @@ var constants = {
         REDIRECTION_USER_CREATED: '/login',
         LOGIN_PAGE_NAME: 'Iniciar sesion en Uptask',
         LOGIN_PAGE_NAME_RENDER: 'login',
+        RESET_ACCOUNT_PAGE_NAME: 'Restablecer tu contraseña',
+        RESET_ACCOUNT_RENDER: 'resetAccount'
     },
     LITERALS_PROJECTS_CONTROLLER: {
         PAGE_NAME: 'Projects',
@@ -80,6 +81,8 @@ var constants = {
         USER_CREATE_NEW_ACCOUNT: '/create-account',
         LOGIN_ACCOUNT: '/login',
         LOGOUT_ROUTE: '/logout',
+        RESET_ACCOUNT: '/reset-account',
+        RESET_ACCOUNT_BY_TOKEN: '/reset-account/:token'
     },
     PASSPORT_LITERALS: {
         USER_NAME_FIELD: 'email',
@@ -92,7 +95,10 @@ var constants = {
         AUTHENTICATION_SUCCESS_REDIRECT_URL: '/',
         AUTHENTICATION_FAILURE_REDIRECT_URL: '/login',
         POST_AUTHENTICATION: '/login',
-        BAD_REQUEST_MESSAGE: 'Ambos campos son obligatorios'
+        BAD_REQUEST_MESSAGE: 'Ambos campos son obligatorios',
+        CRYPTO_RANDOM_BYTES: 20,
+        CRYPTO_ENCODING_METHODS: 'hex',
+        EXPIRATION_TIME_OUT: Date.now() + 360000,
     }
 
 };

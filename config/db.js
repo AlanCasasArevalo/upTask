@@ -5,7 +5,6 @@ const sequelize = new Sequelize(_constants.SEQUELIZE_SETUP.TABLE_NAME, _constant
     host: _constants.SEQUELIZE_SETUP.HOST,
     dialect: _constants.SEQUELIZE_SETUP.DIALECT,
     port: _constants.SEQUELIZE_SETUP.PORT,
-    operatorsAliases: false,
     define: {
         timestamp: false
     }

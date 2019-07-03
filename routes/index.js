@@ -111,6 +111,14 @@ module.exports = function () {
         authController.updatePassword
     );
 
+    router.get('*',
+        authController.redirection
+    );
+
+    router.post('*',
+        authController.redirection
+    );
+
     return router;
 };
 

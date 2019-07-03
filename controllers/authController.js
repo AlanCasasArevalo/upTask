@@ -132,5 +132,8 @@ exports.updatePassword = async (req, res) => {
         req.flash('error', 'Token Necesario para mostrar la pagina');
         res.render('/reset-account')
     }
+};
 
+exports.redirection = async (req, res) => {
+    res.redirect('/')
 };
